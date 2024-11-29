@@ -1,0 +1,20 @@
+CREATE TABLE usuario (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255),
+    email VARCHAR(255),
+    senha VARCHAR(30)
+);
+CREATE TABLE atividades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    acao VARCHAR(255),
+    data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
+);
+
+INSERT INTO usuario (nome, email, senha) VALUES ('Walter Hartwell White', 'WalterHartwellWhite@gmail.com', 'C10H15N');
+INSERT INTO usuario (nome, email, senha) VALUES ('Will Smith', 'will@gmail.com', 'password123');
+INSERT INTO usuario (nome, email, senha) VALUES ('Charlie Brown Jr', 'charlie@gmail.com', '123');
+INSERT INTO usuario (nome, email, senha) VALUES ('Tom Cruise', 'tom@gmail.com', 'tompass');
+
+
